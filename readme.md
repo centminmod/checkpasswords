@@ -12,10 +12,20 @@ example of weak password found in breached database
     ./checkpasswords.sh 123                           
     [unsafe] Password found in breached dataabase.
 
+or
+
+    ./checkpasswords.sh 123 >/dev/null; echo $?                     
+    1
+
 example of stronger unique password not found in breached databased
 
     ./checkpasswords.sh OVIgdv2Ttn9ep5zs1pM76
     [safe] Password not found in breached database.
+
+or
+
+    ./checkpasswords.sh OVIgdv2Ttn9ep5zs1pM76 >/dev/null; echo $?
+    0
 
 using pwgen generated passwords checking
  
