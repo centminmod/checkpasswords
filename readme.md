@@ -10,7 +10,7 @@ i.e.
 example of weak password found in breached database
 
     ./checkpasswords.sh 123                           
-    [unsafe] Password found in breached dataabase.
+    [unsafe] Password found in breached database.
 
 or
 
@@ -35,3 +35,8 @@ output
 
     ./checkpasswords.sh $(pwgen -1cnys 21)
     [safe] Password not found in breached database.
+
+or
+
+    ./checkpasswords.sh $(pwgen -1cnys 21) >/dev/null; echo $?
+    0
