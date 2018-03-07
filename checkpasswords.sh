@@ -22,7 +22,7 @@ response=$(curl -s https://api.pwnedpasswords.com/range/$prefix)
 while read -r line; do
   lineOriginal="$prefix$line"
   if [ "${lineOriginal:0:40}" == "$upperCase" ]; then
-    echo "[unsafe] Password found in breached dataabase."
+    echo "[unsafe] Password found in breached database."
     exit 1
   fi
 done <<< "$response"
