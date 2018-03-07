@@ -7,7 +7,17 @@ i.e.
  
     ./checkpasswords.sh YOURPASSWORD
 
- using pwgen generated passwords checking
+example of weak password found in breached database
+
+    ./checkpasswords.sh 123                           
+    [unsafe] Password found in breached dataabase.
+
+example of stronger unique password not found in breached databased
+
+    ./checkpasswords.sh OVIgdv2Ttn9ep5zs1pM76
+    [safe] Password not found in breached database.
+
+using pwgen generated passwords checking
  
     ./checkpasswords.sh $(pwgen -1cnys 21)
 

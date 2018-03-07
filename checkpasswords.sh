@@ -15,13 +15,14 @@
 
 password=$1
 hash="$(echo -n $password | openssl sha1)"
+hash=${hash#(stdin)= }
 upperCase="$(echo $hash | tr '[a-z]' '[A-Z]')"
 prefix="${upperCase:0:5}"
 response=$(curl -s https://api.pwnedpasswords.com/range/$prefix)
 while read -r line; do
   lineOriginal="$prefix$line"
   if [ "${lineOriginal:0:40}" == "$upperCase" ]; then
-    echo "[unsafe] Password breached."
+    echo "[unsafe] Password found in breached dataabase."
     exit 1
   fi
 done <<< "$response"
