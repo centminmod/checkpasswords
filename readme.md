@@ -40,3 +40,8 @@ or
 
     ./checkpasswords.sh $(pwgen -1cnys 21) >/dev/null; echo $?
     0
+
+## Links
+
+* https://haveibeenpwned.com/
+* https://www.troyhunt.com/the-legitimisation-of-have-i-been-pwned/
